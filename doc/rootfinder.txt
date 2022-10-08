@@ -68,15 +68,14 @@ VARIABLES					*rootfinder-variables*
 
 g:rootfinder#pattern				*g:rootfinder#pattern*
 	List of file name or directory name to regard as root.
-
-	default value: = [ ".git/", ".hg/", ".svn/", ".bzr/", "Makefile", "Gemfile", "package.json", "composer.phar", "pyproject.toml", "setup.py", "requirements.txt", "Pipfile", "Cargo.toml", ]
+	Visit
+	https://github.com/sevenc-nanashi/rootfinder.vim/blob/main/autoload/rootfinder.vim#L1
+        for default value.
 
 
 g:rootfinder#pattern_extend			*g:rootfinder#pattern_extend*
         Another list of |g:rootfinder#pattern|. This is useful when you want to
 	add file/directory but don't want to write default list to your vimrc.
-
-	default value: = []
 
 
 ------------------------------------------------------------------------------
