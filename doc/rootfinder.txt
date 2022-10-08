@@ -1,4 +1,4 @@
-*findroot.txt*	Simple root finder
+*rootfinder.txt*	Simple root finder
 
 Version : 0.1.0
 Author  : Nanashi. <https://github.com/sevenc-nanashi>
@@ -23,70 +23,75 @@ License : MIT license  {{{
 }}}
 
 ==============================================================================
-CONTENTS					*findroot-contents*
+CONTENTS					*rootfinder-contents*
 
-INTRODUCTION			|findroot-introduction|
-USAGE				|findroot-usage|
-INTERFACE			|findroot-interface|
-  VARIABLES			  |findroot-variables|
-  FUNCTIONS			  |findroot-functions|
-TODO				|findroot-todo|
-CHANGELOG			|findroot-changelog|
+INTRODUCTION			|rootfinder-introduction|
+USAGE				|rootfinder-usage|
+INTERFACE			|rootfinder-interface|
+  VARIABLES			  |rootfinder-variables|
+  FUNCTIONS			  |rootfinder-functions|
+TODO				|rootfinder-todo|
+CHANGELOG			|rootfinder-changelog|
 
 
 ==============================================================================
-INTRODUCTION					*findroot-introduction*
+INTRODUCTION					*rootfinder-introduction*
 
-*findroot* is a Vim plugin that adds `g:findroot#findroot` function.
+*rootfinder* is a Vim plugin that adds `g:rootfinder#find` function.
 
 Latest version:
-https://github.com/sevenc-nanashi/findroot.vim
+https://github.com/sevenc-nanashi/rootfinder.vim
 
 
 ==============================================================================
-USAGE						*findroot-usage*
+USAGE						*rootfinder-usage*
 
-Just call `g:findroot#findroot`.
+Just call |g:rootfinder#find|.
 Example usage: >
-        let root = g:findroot#findroot(expand('%:p:h'))
+        let root = g:rootfinder#find(expand('%:p:h'))
         if len(root) < 1
           let root = '.'
         endif
         execute 'Fern ' .. fnameescape(root) .. ' -drawer -width=40'
->
+<
+
+You can add more file/directory with |g:rootfinder#pattern_extend|: >
+	let g:rootfinder#pattern_extend = ['.my-root-file']
+<
+
 
 ==============================================================================
-INTERFACE					*findroot-interface*
+INTERFACE					*rootfinder-interface*
 
 ------------------------------------------------------------------------------
-VARIABLES					*findroot-variables*
+VARIABLES					*rootfinder-variables*
 
-g:findroot#pattern				*g:findroot#pattern*
+g:rootfinder#pattern				*g:rootfinder#pattern*
 	List of file name or directory name to regard as root.
 
 	default value: = [ ".git/", ".hg/", ".svn/", ".bzr/", "Makefile", "Gemfile", "package.json", "composer.phar", "pyproject.toml", "setup.py", "requirements.txt", "Pipfile", "Cargo.toml", ]
 
 
-g:findroot#pattern_extend			*g:findroot#pattern_extend*
-        Another list of |g:findroot#pattern|. This is useful when you want to
+g:rootfinder#pattern_extend			*g:rootfinder#pattern_extend*
+        Another list of |g:rootfinder#pattern|. This is useful when you want to
 	add file/directory but don't want to write default list to your vimrc.
 
 	default value: = []
 
 
 ------------------------------------------------------------------------------
-FUNCTIONS					*findroot-functions*
+FUNCTIONS					*rootfinder-functions*
 
-g:findroot#findroot({base})			*g:findroot#findroot()*
-	Find |g:findroot#pattern| from {base} path.
+g:rootfinder#find({base})			*g:rootfinder#find()*
+	Find |g:rootfinder#pattern| from {base} path.
 
 ==============================================================================
-TODO						*findroot-todo*
+TODO						*rootfinder-todo*
 
 Add more examples.
 
 ==============================================================================
-CHANGELOG					*findroot-changelog*
+CHANGELOG					*rootfinder-changelog*
 
 0.1.0:
 	Initial release

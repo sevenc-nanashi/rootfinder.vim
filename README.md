@@ -10,6 +10,10 @@ if len(root) < 1
 endif
 execute 'Fern ' .. fnameescape(root) .. ' -drawer -width=40'
 ```
+You can add more file/directory name with `g:rootfinder#pattern_extend`:
+```vim
+let g:rootfinder#pattern_extend = ['.my-root-file']
+```
 
 ## License
 
