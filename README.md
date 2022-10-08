@@ -1,10 +1,10 @@
-# findroot.vim
+# rootfinder.vim
 
-findroot is a Vim plugin that adds `g:findroot#findroot` function.
+rootfinder is a Vim plugin that adds `g:rootfinder#find` function.
 
 ## Example usage
 ```vim
-let root = g:findroot#findroot(expand('%:p:h'))
+let root = g:rootfinder#find(expand('%:p:h'))
 if len(root) < 1
   let root = '.'
 endif
