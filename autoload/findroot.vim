@@ -19,7 +19,7 @@ function! g:findroot#findroot(base) abort
   for pattern in (g:findroot#pattern + g:findroot#pattern_extend)
     if pattern =~? '/$'
       if finddir(pattern, a:base . ';') != ''
-        return fnamemodify(finddir(pattern, a:base . ';'), ':p:h')
+        return fnamemodify(finddir(pattern, a:base . ';') .. '/..', ':p:h')
       endif
     else
       if findfile(pattern, a:base . ';') != ''
