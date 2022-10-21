@@ -10,6 +10,7 @@ let g:rootfinder#pattern = [
       \ 'package-lock.json',
       \ 'yarn.lock',
       \ 'pnpm-lock.yaml',
+      \ 'deps.ts',
       \ 'composer.phar',
       \ 'pyproject.toml',
       \ 'setup.py',
