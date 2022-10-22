@@ -43,7 +43,7 @@ function! g:rootfinder#find(base) abort
   for pattern in (g:rootfinder#pattern + g:rootfinder#pattern_extend)
     if pattern =~? '/$'
       if finddir(pattern, a:base . ';') != ''
-        return fnamemodify(finddir(pattern, a:base . ';') .. '/..', ':p:h')
+        return fnamemodify(finddir(pattern, a:base . ';'), ':p:h:h')
       endif
     else
       if findfile(pattern, a:base . ';') != ''
